@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 7%;
+    background-color:  #6499E9;
+    border-bottom: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    text-decoration: none;
+}
+
+.navbar .navbar-logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .logo span {
+    color:  #6499E9;
+    text-decoration: none;
+}
+.navbar .navbar-nav{
+    float: right;
+    margin-left: 800px;
+}
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.9);
+}
+
+.navbar .navbar-extra a {
+    color: #fff;
+    margin: 0 0.6;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+#hamburger-menu {
+    display: none;
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media(max-width:1366px) {
+    html{
+        font-size: 80%;
+    }
+}
+
+/* Tablet */
+@media(max-width:768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--primary);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+}
+.navbar .navbar-nav a::after{
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.2);
+  }
+}
+
+/* Mobile Phone */
+@media(max-width:450px) {
+    html {
+        font-size: 55%;
+    }
+}
+.gambar {
+    text-align: center;
+    margin-top: 80px;
+}
+.gambar img {
+    max-width: 100%;
+    height: auto;
+    width: 960px;
+    padding: 30px;
+}
+.header-text{
+    text-align: center;
+}
+.header-text h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.header-text p{
+    text-align: center;
+    max-width: 1000px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+/*-- projects -- */
+#projects{
+    padding: 5px 0;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.work-list h1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 50px;
+    padding: 10px;
+    text-align: center;
+
+}
+.work-list a{
+    text-decoration: none;
+    color: #000;
+    padding: 20px;
+    margin-top: 10px;
+}
+.text a h1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+.work-list{
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+    width: 1000px;
+    margin-left: 220px;
+}
+.work-list a img{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 130px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+.text p{
+   justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    text-align: center; 
+    margin-bottom: -40px;
+}
+.text p span {
+    color: darkblue;
+}
+.text h1 span{
+    font-size: 50pxpx;
+}
+.ticker-container {
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;
+    height: 40px;
+    margin-top: 100px;
+    padding: 10px;
+     /* Atur tinggi container sesuai dengan keinginan Anda */
+}
+
+/* Gaya elemen ticker */
+.ticker {
+    white-space: nowrap; /* Menghindari pemisahan teks menjadi beberapa baris */
+    animation: ticker-animation 40s linear infinite; /* Animasi yang bergerak ke kanan */
+}
+
+/* Gaya teks dalam ticker */
+.ticker-text {
+    display: inline-block;
+    padding-right: 100%; /* Membuat teks bergerak keluar dari layar */
+    animation: ticker-text-animation 40s linear infinite; /* Animasi teks yang bergerak */
+}
+
+/* Animasi teks yang bergerak ke kanan */
+@keyframes ticker-animation {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Animasi teks dalam ticker */
+@keyframes ticker-text-animation {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.action a img{
+    margin-left: 260px;
+}
+.action p{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    text-align: center; 
+    margin-bottom: -40px;
+}
+
+.action p span {
+    color: darkblue;
+    margin-bottom: 10px;
+}
+.horror a img{
+    margin-left: 180px;
+}
+.horror p{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    text-align: center; 
+    margin-bottom: -40px;
+}
+
+.horror p span {
+    color: darkblue;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+}
+.free-website h1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    text-align: center; 
+    margin-bottom: -40px;
+}
+.free-website{
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+    width: 1000px;
+    margin-left: 220px;
+}
+.free-website img{
+    width: 600px;
+    height: auto;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 200px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.free-website a{
+    text-decoration: none;
+    color: #000;
+}
+footer{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 50px;
+
+
+
